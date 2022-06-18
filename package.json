@@ -4,7 +4,7 @@
   "description": "My webpack project",
   "main": "app.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "webpack --mode=production --node-env=production",
     "lint": "eslint . --ext .ts",
     "dev": "nodemon",
@@ -16,6 +16,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Piotr-Setsko/CRUD-API.git"
+  },
+  "jest": {
+    "collectCoverage": true
   },
   "author": "Piotr Setsko",
   "license": "ISC",
@@ -40,7 +43,9 @@
   },
   "dependencies": {
     "dotenv": "^16.0.1",
+    "jest": "^28.1.1",
     "nodemon": "^2.0.16",
+    "save-dev": "^0.0.1-security",
     "ts-node": "^10.8.1",
     "typescript": "^4.7.4",
     "uuid": "^8.3.2"
