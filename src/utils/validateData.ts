@@ -8,7 +8,7 @@ const validateData = (value: string, res: http.ServerResponse) => {
       Object.prototype.hasOwnProperty.call(obj, prop));
     const isObjectLength = Object.keys(obj).length === 3;
 
-    if (!isKeys && !isObjectLength) {
+    if (!isKeys || !isObjectLength) {
       sendRes(res, 400, 'Wrong data type. Check required fields.');
 
       return false;
