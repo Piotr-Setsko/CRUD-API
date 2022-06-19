@@ -8,6 +8,7 @@ import sendRes from './utils/message';
 
 setConfig();
 const { PORT } = process.env;
+const STATUS = process.env.NODE_ENV;
 const totalCPUs = cpus();
 
 const newServer = () => {
@@ -32,11 +33,11 @@ if (process.argv.slice(2)[1] === '--multi') {
     });
   } else {
     newServer().listen(PORT, () => {
-      console.log(`Server in ${process.env.NODE_ENV} status, server started on port: ${PORT}`);
+      console.log(`Server in ${STATUS} status, server started on port: ${PORT}`);
     });
   }
 } else {
   newServer().listen(PORT, () => {
-    console.log(`Server in ${process.env.NODE_ENV} status, server started on port: ${PORT}`);
+    console.log(`Server in ${STATUS} status, server started on port: ${PORT}`);
   });
 }
