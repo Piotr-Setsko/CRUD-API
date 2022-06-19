@@ -1,6 +1,7 @@
 import { validate as uuidvalid, version as uuidver } from 'uuid';
 import http from 'http';
-import { IUser } from './model';
+import { IUser } from '../model';
+import sendRes from '../utils/message';
 
 const validateId = (url: string, users: IUser[], res: http.ServerResponse) => {
   const data = url.split('/').pop();
@@ -9,19 +10,11 @@ const validateId = (url: string, users: IUser[], res: http.ServerResponse) => {
     if (actualUser[0]) {
       return actualUser[0];
     }
-    res.writeHead(404, { 'Content-Type': 'application/json' });
-    res.write(
-      'User undefined'
-    );
-    res.end();
+    sendRes(res, 404, 'User undefined');
 
     return false;
   }
-  res.writeHead(400, { 'Content-Type': 'application/json' });
-  res.write(
-    'Wrong ID value'
-  );
-  res.end();
+  sendRes(res, 400, 'Wrong ID value');
 
   return false;
 };

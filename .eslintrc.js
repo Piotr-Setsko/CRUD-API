@@ -17,6 +17,8 @@ module.exports = {
     'import/no-unresolved': 'off',
     'import/extensions': 'off',
     'implicit-arrow-linebreak': 'off',
-    'no-underscore-dangle': 'off'
+    'no-underscore-dangle': 'off',
+    'no-param-reassign': 'off',
+    'consistent-return': 'off'
   }
 };
