@@ -5,7 +5,6 @@
   "main": "app.ts",
   "scripts": {
     "test": "jest",
-    "lint": "eslint . --ext .ts",
     "start:dev": "nodemon --node-env=development",
     "start:prod": "webpack && node dist/main.js --node-env=production",
     "start:multi": "nodemon --node-env=development --multi"
