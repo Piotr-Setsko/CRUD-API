@@ -16,6 +16,7 @@ module.exports = {
     '@typescript-eslint/ban-ts-comment': 'off',
     'import/no-unresolved': 'off',
     'import/extensions': 'off',
-    'implicit-arrow-linebreak': 'off'
+    'implicit-arrow-linebreak': 'off',
+    'no-underscore-dangle': 'off'
   }
 };

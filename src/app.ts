@@ -1,13 +1,12 @@
 import http from 'http';
-// import { register } from 'ts-node';
 import { v4 as uuidv4 } from 'uuid';
 import { IUser } from './model';
 import validateData from './validateData';
 import validateId from './validateId';
+import setConfig from './config';
 
-const PORT = process.env.PORT || 4000;
-
-
+setConfig();
+const { PORT } = process.env;
 let users: IUser[] = [];
 
 // limport { ICandidate, IUser } from '../interfaces';
@@ -123,7 +122,7 @@ const server = http.createServer(async (req, res) => {
         }
       }
     } else {
-      res.writeHead(400, { 'Content-Type': 'application/json' });
+      res.writeHead(404, { 'Content-Type': 'application/json' });
       res.write(
         'Route not found'
       );
@@ -136,5 +135,5 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`server started on port: ${PORT}`);
+  console.log(`Server in ${process.env.NODE_ENV} status, server started on port: ${PORT}`);
 });
